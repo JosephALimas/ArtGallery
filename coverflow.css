@@ -1,0 +1,75 @@
+/* Carousel-specific layering; the original page styling remains in styles.css. */
+.carousel-stage {
+  --coverflow-offset: clamp(190px, 28vw, 360px);
+  cursor: grab;
+}
+
+.carousel-stage.is-dragging { cursor: grabbing; }
+
+.coverflow-track {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  pointer-events: none;
+}
+
+.carousel-stage .artwork-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform .58s cubic-bezier(.22, .68, 0, 1), opacity .5s ease, filter .5s ease;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.carousel-stage .artwork-wrap[data-position="0"] {
+  z-index: 3;
+  opacity: 1;
+  filter: none;
+  transform: translate(-50%, -50%) translateX(0) rotateY(0) scale(1);
+}
+
+.carousel-stage .artwork-wrap[data-position="-1"] {
+  z-index: 2;
+  opacity: .78;
+  filter: brightness(.68);
+  transform: translate(-50%, -50%) translateX(calc(-1 * var(--coverflow-offset))) rotateY(38deg) scale(.79);
+}
+
+.carousel-stage .artwork-wrap[data-position="1"] {
+  z-index: 2;
+  opacity: .78;
+  filter: brightness(.68);
+  transform: translate(-50%, -50%) translateX(var(--coverflow-offset)) rotateY(-38deg) scale(.79);
+}
+
+.carousel-stage .artwork-wrap[data-position="-2"] {
+  z-index: 1;
+  opacity: 0;
+  filter: brightness(.5);
+  transform: translate(-50%, -50%) translateX(calc(-1.65 * var(--coverflow-offset))) rotateY(48deg) scale(.62);
+}
+
+.carousel-stage .artwork-wrap[data-position="2"] {
+  z-index: 1;
+  opacity: 0;
+  filter: brightness(.5);
+  transform: translate(-50%, -50%) translateX(calc(1.65 * var(--coverflow-offset))) rotateY(-48deg) scale(.62);
+}
+
+@media (max-width: 650px) {
+  .carousel-stage { --coverflow-offset: clamp(150px, 56vw, 205px); }
+  .carousel-stage .artwork-wrap[data-position="-1"],
+  .carousel-stage .artwork-wrap[data-position="1"] { opacity: .68; }
+}
+
+@media (max-width: 380px) {
+  .carousel-stage { --coverflow-offset: 150px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-stage .artwork-wrap { transition-duration: .01ms; }
+}

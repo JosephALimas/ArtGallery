@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171310" />
+    <meta name="description" content="ArtGallery is an atmospheric showcase of art after dark. Explore a collection of luminous, jazz-inspired studies." />
+    <title>ArtGallery — Art after dark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="coverflow.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#collection">Skip to collection</a>
+
+    <header class="site-header shell">
+      <a class="wordmark" href="#top" aria-label="ArtGallery, back to top">Art<span>Gallery</span><span class="wordmark-dot">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#collection">The collection</a>
+        <a href="#about">Our story</a>
+      </nav>
+      <span class="header-edition">AN EVENING IN ART <span aria-hidden="true">✦</span> VOL. 01</span>
+    </header>
+
+    <main id="top">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A GALLERY FOR THE HOURS AFTER DARK</p>
+          <h1 id="hero-title">Where art<br />meets the <em>night.</em></h1>
+          <p class="hero-description">Step into a room of color, shadow, and quiet wonder. An intimate collection made to be experienced one work at a time.</p>
+          <a class="text-link" href="#collection">Explore the collection <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-halo"></div>
+          <div class="hero-frame"><img src="artworks/after-hours.svg" alt="" width="720" height="900" /></div>
+          <span class="hero-art-note">A STUDY IN LIGHT / Nº 01</span>
+          <span class="hero-star">✳</span>
+        </div>
+        <div class="hero-bottom"><span>SCROLL TO DISCOVER</span><span class="scroll-line" aria-hidden="true"></span><span>EST. AFTER DARK</span></div>
+      </section>
+
+      <section class="collection" id="collection" aria-labelledby="collection-title">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> THE FEATURED COLLECTION</p>
+              <h2 id="collection-title">Art in the <em>spotlight.</em></h2>
+            </div>
+            <p>Five imagined works. Five different moods. Take your time with each one.</p>
+          </div>
+
+          <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Featured artwork">
+            <div class="carousel-stage" id="carousel-stage" tabindex="0" aria-label="Artwork carousel. Use left and right arrow keys to change artwork.">
+              <div class="stage-glow" aria-hidden="true"></div>
+              <div class="slide-number" aria-hidden="true"><span id="slide-current">01</span><span class="number-rule"></span>05</div>
+              <div class="coverflow-track" id="coverflow-track"></div>
+              <div class="stage-side-label" aria-hidden="true">ARTGALLERY / PRIVATE VIEWING</div>
+            </div>
+            <div class="carousel-info" aria-live="polite" aria-atomic="true">
+              <div>
+                <p class="artwork-kicker" id="artwork-kicker">STUDY 01 / WARMTH</p>
+                <h3 id="artwork-title">After Hours</h3>
+                <p class="artwork-description" id="artwork-description">A little golden light, held against the last blue of the evening.</p>
+                <p class="preview-label">Illustrative preview artwork</p>
+              </div>
+              <div class="carousel-controls">
+                <div class="dots" id="carousel-dots" role="group" aria-label="Choose artwork"></div>
+                <div class="arrow-controls">
+                  <button class="arrow-button" id="previous" type="button" aria-label="Previous artwork"><span aria-hidden="true">←</span></button>
+                  <button class="arrow-button" id="next" type="button" aria-label="Next artwork"><span aria-hidden="true">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about shell" id="about" aria-labelledby="about-title">
+        <div class="about-ornament" aria-hidden="true">✳</div>
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line"></span> A PLACE TO PAUSE</p>
+          <h2 id="about-title">Stay a little <em>longer.</em></h2>
+        </div>
+        <div class="about-copy">
+          <p>ArtGallery is a small digital room for looking closely. Inspired by late-night music, warm lamps, and the pleasure of discovering something unexpected.</p>
+          <p>For now, the pieces here are illustrative studies—a glimpse of the atmosphere to come.</p>
+          <a class="text-link" href="#collection">View the collection again <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <a class="wordmark" href="#top" aria-label="ArtGallery, back to top">Art<span>Gallery</span><span class="wordmark-dot">.</span></a>
+      <span>ART FOR THE CURIOUS, AFTER DARK.</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
